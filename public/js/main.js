@@ -1,22 +1,12 @@
-angular.module('openDotaZuera', ['ngAnimate', 'ngRoute'])
+angular.module('openDotaZuera', ['ngAnimate', 'ngRoute', 'services'])
 .config(function($routeProvider, $locationProvider){
 
 	$locationProvider.html5Mode(true);
 
-	$routeProvider.when('/player', {
-		templateUrl: '',
-		controller: ''
+	$routeProvider.when('/players/:idPlayer', {
+		templateUrl: 'partials/players.html',
+		controller: 'PlayersController'
 	})
 
-	$routeProvider.when('/fotos/new', {
-		templateUrl: '',
-		controller: ''
-	})
-
-	$routeProvider.when('/fotos/edit/:fotoId', {
-		templateUrl: '',
-		controller: ''
-	})
-
-	$routeProvider.otherwise({ redirectTo: '/player' })
+	$routeProvider.otherwise({ redirectTo: '/players/:idPlayer' })
 });
