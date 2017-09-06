@@ -3,10 +3,15 @@ angular.module('openDotaZuera', ['ngAnimate', 'ngRoute', 'services'])
 
 	$locationProvider.html5Mode(true);
 
+	$routeProvider.when('/', {
+		templateUrl: 'partials/principal.html',
+		controller: 'PrincipalController'
+	})
+
 	$routeProvider.when('/players/:idPlayer', {
 		templateUrl: 'partials/players.html',
 		controller: 'PlayersController'
 	})
 
-	$routeProvider.otherwise({ redirectTo: '/players/:idPlayer' })
+	$routeProvider.otherwise({ redirectTo: '/' })
 });
