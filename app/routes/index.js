@@ -18,6 +18,7 @@ module.exports  = function(app) {
 	 
 	app.get('/logout', steam.enforceLogin('/'), function(req, res) {
 	    req.logout();
+	    res.clearCookie('connect.sid', { path: '/' });
 	    res.redirect('/');
 	});
     // habilitando HTML5MODE

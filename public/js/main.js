@@ -8,6 +8,7 @@ angular.module('openDotaZuera', ['ngAnimate', 'ngRoute', 'services'])
 		controller: 'PrincipalController'
 	})
 
+
 	$routeProvider.when('/players/:idPlayer', {
 		templateUrl: 'partials/players.html',
 		controller: 'PlayersController'
